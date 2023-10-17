@@ -45,7 +45,7 @@ public class DuplicateNumberOrString {
                 System.out.print(num);
             }
         }
-        System.out.println();
+        System.out.println();  
     }
 
     static void printDuplicateNumbers2(int arr[]) {
