@@ -11,6 +11,10 @@ public class Test {
       Info info=new Info();
       Student student=new Student();
 //      info = student // compile time error
+        Main main = new Student();
+        main.print();
+        main.show();
+        info.print();
 
         Set<String> set=new HashSet<>();
     }
@@ -21,11 +25,24 @@ public class Test {
     }
 }
 
-class Main{}
+abstract class Main{
+    abstract void print();
+    void show(){
+        System.out.println("Call in abstract");
+    }
+}
 class Info extends Main{
 
+    @Override
+    void print() {
+        System.out.println("Info");
+    }
 }
 
 class Student extends Main{
 
+    @Override
+    void print() {
+        System.out.println("Student");
+    }
 }

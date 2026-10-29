@@ -5,16 +5,12 @@ fun main() {
     println("${650.isPalindrome()}")
     println("${"656".isPalindrome()}")
     println("${"656".isPalindromeReversed()}")
-    println("${"650".isPalindromeReversed()}")
-
-
-    5 addition 5
+    println("${"ABBA".isPalindromeReversed()}")
+    println("${"ABBA".isTwpPointerPolidrome()}")
 }
 
-infix fun Int.addition(b:Int){
-    println("${this+b}")
-}
 
+// Time complexity O(n) - Space complexity O(1)
 private fun Int.isPalindrome(): Boolean {
     var rev: Int
     var sum: Int = 0
@@ -27,7 +23,8 @@ private fun Int.isPalindrome(): Boolean {
     return sum == this
 }
 
-// We can use same logic for String reverse
+// Time complexity O(n^2) - Space complexity O(n)
+// String concat
 private fun String.isPalindrome(): Boolean {
     var rev = ""
     for (i in this.length downTo 1) {
@@ -36,7 +33,20 @@ private fun String.isPalindrome(): Boolean {
     return this == rev
 }
 
-private fun String.isPalindromeReversed():Boolean{
-    val temp=this
+// Time complexity O(n^2) - Space complexity O(n)
+private fun String.isPalindromeReversed(): Boolean {
+    val temp = this
     return temp == reversed()
+}
+
+// Time complexity O(n) - Space complexity O(1)
+private fun String.isTwpPointerPolidrome(): Boolean {
+    var left = 0
+    var right = length - 1
+    while (left < right) {
+        if (this[left] != this[right]) return false
+        left++
+        right--
+    }
+    return true
 }
